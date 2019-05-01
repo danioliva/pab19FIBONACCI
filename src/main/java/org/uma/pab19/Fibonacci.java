@@ -2,23 +2,20 @@ package org.uma.pab19;
 
 public class Fibonacci {
   private int result;
-  private int partial1 = 1;
-  private int partial2;
+  private int conejosMaduros = 0;
+  private int conejosJovenes = 1;
   private int temporal;
 
   public int compute(int month, int pair) {
 
     if (month == 1 || month == 2) {
       result = 1;
-    } else {
-      partial2 = pair;
-      for (int i = 2; i < month; i++) {
-
-        result = partial1 + partial2;
-        temporal = partial2;
-        partial2 = temporal + partial1;
-        partial1 = temporal;
-      }
+    }
+    for (int generation = 2; generation <= month; generation++) {
+      temporal = conejosMaduros;
+      conejosMaduros = conejosJovenes + conejosMaduros;
+      conejosJovenes = temporal * pair;
+      result = conejosJovenes + conejosMaduros;
     }
 
     return result;

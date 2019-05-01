@@ -1,10 +1,18 @@
 package org.uma.pab19;
 
 public class Fibonacci {
+
   private int result;
   private int conejosMaduros = 0;
   private int conejosJovenes = 1;
   private int temporal;
+
+  /**
+   * Method to know how many pairs of rabbits we have
+   * @param month
+   * @param pairProduced
+   * @return
+   */
 
   public int compute(int month, int pairProduced) {
 

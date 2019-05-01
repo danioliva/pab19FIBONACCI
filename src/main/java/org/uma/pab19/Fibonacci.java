@@ -6,7 +6,7 @@ public class Fibonacci {
   private int conejosJovenes = 1;
   private int temporal;
 
-  public int compute(int month, int pair) {
+  public int compute(int month, int pairProduced) {
 
     if (month == 1 || month == 2) {
       result = 1;
@@ -14,7 +14,7 @@ public class Fibonacci {
     for (int generation = 2; generation <= month; generation++) {
       temporal = conejosMaduros;
       conejosMaduros = conejosJovenes + conejosMaduros;
-      conejosJovenes = temporal * pair;
+      conejosJovenes = temporal * pairProduced;
       result = conejosJovenes + conejosMaduros;
     }
 
